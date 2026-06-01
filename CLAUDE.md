@@ -34,12 +34,30 @@ recorded JSONL streams used for ALL development and tests.
 
 ## Dev loop (no live agent needed)
 
-1. `pnpm i`
-2. run the server (`pnpm --filter @agent-ui/server dev`)
-3. `pnpm --filter agent-ui dev demo fixtures/claude-code-basic.jsonl` to stream a fixture
-4. open the UI (`pnpm --filter @agent-ui/ui dev`) and verify events render.
+1. `pnpm install && pnpm -r build`
+2. run the server: `pnpm --filter @agent-ui/server dev` (API + SSE on :4317)
+3. run the UI: `pnpm --filter @agent-ui/ui dev` (dashboard on :5173)
+4. stream a fixture: `node packages/cli/dist/index.js demo` (or `npx agent-ui demo`)
+5. open the dashboard and verify events render live.
 
 ## Commands
 
 - `pnpm typecheck` · `pnpm lint` · `pnpm test` · `pnpm build` — run across the workspace.
 - Per package: `pnpm --filter <name> <script>`.
+
+## Status (implemented)
+
+- core: schema + `validate`/`makeEvent`/`redact` (zero runtime deps but zod).
+- server: `POST /ingest`, `GET /stream` (SSE, Last-Event-ID), `GET /sessions[/:id]`,
+  `GET /healthz`; Store interface with JSONL (default) + SQLite backends
+  (`AGENT_UI_STORE`); `redact()` runs in the ingest path. Default port 4317.
+- cli: `agent-ui demo` fixture player (pacing + `--fast`/`--speed`/`--server`/`--session`);
+  `watch`/`ingest`/`replay`/`init` are stubs for the local-only phases.
+- ui: live virtualized timeline, file_edit/command/message/tool detail views,
+  token meter, session switcher, filters. Reads only the schema.
+- The HTTP/SSE/Store contract is pinned in `docs/CONTRACT.md`.
+
+## Not yet (verified locally, not in the sandbox)
+
+- adapter-claude-code / adapter-codex parsers, `agent-ui watch` (Phases 5/7).
+- log tailing → import + `agent-ui replay` (Phase 6.2). VS Code / Chrome surfaces.
