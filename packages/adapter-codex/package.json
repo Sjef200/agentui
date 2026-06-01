@@ -1,0 +1,25 @@
+{
+  "name": "@agent-ui/adapter-codex",
+  "version": "0.0.0",
+  "description": "Translates Codex CLI's machine-readable output into normalized core events.",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsup",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@agent-ui/core": "workspace:*"
+  }
+}
