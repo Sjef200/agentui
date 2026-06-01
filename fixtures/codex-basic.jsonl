@@ -1,0 +1,9 @@
+{"v":1,"id":"cx-0","session":"sess-codex-basic","seq":0,"ts":1780274000000,"agent":"codex","type":"session_start","data":{"cwd":"/home/user/acme-api","title":"Document the CLI usage"}}
+{"v":1,"id":"cx-1","session":"sess-codex-basic","seq":1,"ts":1780274001400,"agent":"codex","type":"message","data":{"role":"user","text":"Write a Usage section for the CLI in the README."}}
+{"v":1,"id":"cx-2","session":"sess-codex-basic","seq":2,"ts":1780274002600,"agent":"codex","type":"message","data":{"role":"assistant","text":"I'll check the CLI entry point and add a Usage section to the README."}}
+{"v":1,"id":"cx-3","session":"sess-codex-basic","seq":3,"ts":1780274003300,"agent":"codex","type":"tool_call","data":{"name":"read_file","args":{"path":"src/cli.ts"}}}
+{"v":1,"id":"cx-4","session":"sess-codex-basic","seq":4,"ts":1780274003600,"agent":"codex","type":"tool_result","data":{"name":"read_file","ok":true,"result":{"lines":38}}}
+{"v":1,"id":"cx-5","session":"sess-codex-basic","seq":5,"ts":1780274006100,"agent":"codex","type":"file_edit","data":{"path":"README.md","diff":"--- a/README.md\n+++ b/README.md\n@@ -8,6 +8,18 @@\n ## Install\n \n npm i -g acme-cli\n+\n+## Usage\n+\n+```bash\n+# fetch a resource\n+acme get <id>\n+\n+# list resources\n+acme list --limit 20\n+```\n"}}
+{"v":1,"id":"cx-6","session":"sess-codex-basic","seq":6,"ts":1780274008500,"agent":"codex","type":"command","data":{"cmd":"npm run lint:md","cwd":"/home/user/acme-api","exitCode":0,"stdout":"README.md: 0 problems","stderr":""}}
+{"v":1,"id":"cx-7","session":"sess-codex-basic","seq":7,"ts":1780274008800,"agent":"codex","type":"token_usage","data":{"input":2040,"output":610,"costUsd":0.0061}}
+{"v":1,"id":"cx-8","session":"sess-codex-basic","seq":8,"ts":1780274009000,"agent":"codex","type":"session_end","data":{"reason":"completed"}}
