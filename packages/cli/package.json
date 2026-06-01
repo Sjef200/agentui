@@ -15,6 +15,7 @@
     "dev": "tsx src/index.ts"
   },
   "dependencies": {
-    "@agent-ui/core": "workspace:*"
+    "@agent-ui/core": "workspace:*",
+    "commander": "^12.1.0"
   }
 }
