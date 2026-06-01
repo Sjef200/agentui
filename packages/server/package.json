@@ -17,7 +17,9 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsup",
-    "test": "vitest run"
+    "test": "vitest run",
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js"
   },
   "dependencies": {
     "@agent-ui/core": "workspace:*",
