@@ -4,6 +4,7 @@
   "description": "Translates Codex CLI's machine-readable output into normalized core events.",
   "type": "module",
   "license": "MIT",
+  "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

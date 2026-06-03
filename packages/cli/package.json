@@ -1,5 +1,5 @@
 {
-  "name": "agent-ui",
+  "name": "@agent-ui/cli",
   "version": "0.0.0",
   "description": "agent-ui CLI: watch / ingest / replay / demo for AI coding agents",
   "type": "module",
@@ -7,7 +7,10 @@
   "bin": {
     "agent-ui": "./dist/index.js"
   },
-  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["dist", "README.md"],
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsup",

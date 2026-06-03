@@ -37,7 +37,7 @@ recorded JSONL streams used for ALL development and tests.
 1. `pnpm install && pnpm -r build`
 2. run the server: `pnpm --filter @agent-ui/server dev` (API + SSE on :4317)
 3. run the UI: `pnpm --filter @agent-ui/ui dev` (dashboard on :5173)
-4. stream a fixture: `node packages/cli/dist/index.js demo` (or `npx agent-ui demo`)
+4. stream a fixture: `node packages/cli/dist/index.js demo` (or `npx @agent-ui/cli demo`)
 5. open the dashboard and verify events render live.
 
 ## Commands

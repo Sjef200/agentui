@@ -42,7 +42,7 @@ pnpm --filter @agent-ui/server dev
 pnpm --filter @agent-ui/ui dev
 
 # terminal 3 — replay a recorded fixture into the server
-node packages/cli/dist/index.js demo            # or: npx agent-ui demo
+node packages/cli/dist/index.js demo            # or: npx @agent-ui/cli demo
 ```
 
 Open the dashboard and watch the events stream in. `demo` paces by the recorded
@@ -52,7 +52,7 @@ specific fixture path.
 ### Watch a live agent (verified locally)
 
 ```bash
-npx agent-ui watch -- claude        # wrap the agent through its adapter
+npx @agent-ui/cli watch -- claude   # wrap the agent through its adapter
 ```
 
 Live capture — the Claude Code / Codex adapters and log tailing — is verified
@@ -125,7 +125,7 @@ The server, CLI, and UI are **agent-agnostic** — they only speak the core sche
 | `@agent-ui/core`                 | The event schema: types, zod validation, `makeEvent`, redaction.  |
 | `@agent-ui/server`               | Fastify ingest + SSE stream + sessions API + JSONL/SQLite store.  |
 | `@agent-ui/ui`                   | React + Vite + Tailwind dashboard (reads only the schema).        |
-| `agent-ui`                       | The CLI: `demo` today; `watch` / `ingest` / `replay` next.        |
+| `@agent-ui/cli`                  | The CLI (`agent-ui` command): `demo` today; `watch`/`ingest`/`replay` next. |
 | `@agent-ui/adapter-claude-code`  | Claude Code → core events (verified locally).                     |
 | `@agent-ui/adapter-codex`        | Codex CLI → core events (verified locally).                       |
 
@@ -161,7 +161,7 @@ and [CLAUDE.md](./CLAUDE.md).
 - ⏳ Log tailing → import + `agent-ui replay <session>`
 - ⏳ VS Code panel (reuse the dashboard in a Webview; native `vscode.diff`)
 - ⏳ Chrome side panel for web agents
-- ⏳ npm release of the `agent-ui` CLI + libraries
+- ⏳ npm release of the `@agent-ui/cli` + libraries
 
 ## License
 

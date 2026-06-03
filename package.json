@@ -18,7 +18,8 @@
     "test:watch": "vitest",
     "build": "pnpm -r --if-present build",
     "changeset": "changeset",
-    "version-packages": "changeset version"
+    "version-packages": "changeset version",
+    "release": "pnpm -r --if-present build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
